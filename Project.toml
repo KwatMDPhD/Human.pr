@@ -4,12 +4,6 @@ authors = ["KwatMDPhD"]
 version = "0.1.0"
 
 [deps]
-DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Omics = "55404059-57b2-473d-9cce-582834f19b54"
-StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
-Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
-DataFrames = "1.7.0"
-StatsBase = "0.34.4"
-Test = "1.11.0"
