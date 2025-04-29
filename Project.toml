@@ -2,3 +2,7 @@ name = "Human"
 uuid = "2a3214d5-ae79-48bc-878b-3984efb47a78"
 authors = ["KwatMDPhD"]
 version = "0.1.0"
+
+[deps]
+Nucleus = "cd814215-3b54-4e50-ac5e-8a2c7852bc16"
+Omics = "85404059-57b2-473d-9cce-582834f19b16"
