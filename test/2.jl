@@ -114,7 +114,7 @@ const D4 = Dict(
 
 # ---- #
 
-function make(di, s1)
+function text(di, s1)
 
     s2_ = String[]
 
@@ -140,8 +140,8 @@ Nucleus.Table.writ(
         ["Group", "Immune Population", "Neural Population", "Top Blastp against Mouse"],
         hcat(
             map(st -> get(D3, st, ""), S1_),
-            map(st -> make(D1, st), S1_),
-            map(st -> make(D2, st), S1_),
+            map(st -> text(D1, st), S1_),
+            map(st -> text(D2, st), S1_),
             map(st -> get(D4, st, NaN), S1_),
         ),
     ),
