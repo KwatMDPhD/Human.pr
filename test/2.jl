@@ -6,7 +6,7 @@ using Human
 
 # ---- #
 
-const DI = joinpath(dirname(Human.PK), "Data.pr", "output", "gene_set")
+const DI = joinpath(dirname(Human.PK), "Data.pr", "output", "gese")
 
 const D1 = Nucleus.Dictionary.rea(joinpath(DI, "immune_population", "all.json"))
 
