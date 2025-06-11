@@ -16,7 +16,7 @@ const D2 = Nucleus.Dictionary.rea(joinpath(DI, "neural_population", "all.json"))
 
 # ---- #
 
-const S1_ = intersect(
+const ST_ = intersect(
     readlines(joinpath(Human.OU, "1.tsv")),
     vcat(reduce(vcat, values(D1)), reduce(vcat, values(D2))),
 )
@@ -128,7 +128,7 @@ function text(di, s1)
 
     end
 
-    join(s2_, " & ")
+    Nucleus.Strin.text(s2_)
 
 end
 
@@ -136,13 +136,13 @@ Nucleus.Table.writ(
     joinpath(Human.OU, "2.tsv"),
     Nucleus.Table.make(
         "Gene",
-        S1_,
+        ST_,
         ["Group", "Immune Population", "Neural Population", "Top Blastp against Mouse"],
         hcat(
-            map(st -> get(D3, st, ""), S1_),
-            map(st -> text(D1, st), S1_),
-            map(st -> text(D2, st), S1_),
-            map(st -> get(D4, st, NaN), S1_),
+            map(st -> get(D3, st, ""), ST_),
+            map(st -> text(D1, st), ST_),
+            map(st -> text(D2, st), ST_),
+            map(st -> get(D4, st, NaN), ST_),
         ),
     ),
 )

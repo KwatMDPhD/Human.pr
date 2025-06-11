@@ -6,16 +6,14 @@ using Human
 
 # ---- #
 
-const A = Nucleus.Table.rea(Omics.Gene.EN)
+const S1_, S2_ = eachcol(Nucleus.Table.rea(Omics.Gene.EN)[!, ["Gene name", "Gene type"]])
 
 write(
     joinpath(Human.OU, "1.tsv"),
     join(
         sort!(
             setdiff(
-                skipmissing(
-                    A[findall(==("protein_coding"), A[!, "Gene type"]), "Gene name"],
-                ),
+                skipmissing(S1_[findall(==("protein_coding"), S2_)]),
                 skipmissing(
                     Nucleus.Table.rea(joinpath(Human.IN, "ensembl.mouse_human.tsv.gz"))[
                         !,

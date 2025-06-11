@@ -4,13 +4,22 @@ using Human
 
 # ---- #
 
-const A = Nucleus.Table.rea(joinpath(Human.OU, "2.tsv"))
+const _, _, ST_, S =
+    Nucleus.Table.ge(Nucleus.Table.rea(joinpath(Human.OU, "2.tsv"))[!, 1:3])
 
 # ---- #
 
-for st in ("Group", "Immune Population", "Neural Population")
+function make(st)
 
-    st_ = skipmissing(A[!, st])
+    "title" => Dict("text" => st)
+
+end
+
+for id in eachindex(ST_)
+
+    st = ST_[id]
+
+    st_ = skipmissing(S[:, id])
 
     un_ = unique(st_)
 
@@ -22,11 +31,10 @@ for st in ("Group", "Immune Population", "Neural Population")
         joinpath(Human.OU, "$st.html"),
         (Dict("type" => "bar", "y" => um_[in_], "x" => un_[in_]),),
         Dict(
-            "width" => max(1600, lastindex(un_) * 16),
             "barmode" => "stack",
-            "title" => Dict("text" => "Human Genes"),
-            "yaxis" => Dict("title" => Dict("text" => "Count")),
-            "xaxis" => Dict("title" => Dict("text" => st)),
+            make("Human Genes"),
+            "yaxis" => Dict(make("Count")),
+            "xaxis" => Dict(make(st)),
         ),
     )
 
