@@ -15,11 +15,11 @@ function make(st)
 
 end
 
-for id in eachindex(ST_)
+for nd in eachindex(ST_)
 
-    st = ST_[id]
+    st = ST_[nd]
 
-    st_ = skipmissing(S[:, id])
+    st_ = skipmissing(S[:, nd])
 
     un_ = unique(st_)
 
