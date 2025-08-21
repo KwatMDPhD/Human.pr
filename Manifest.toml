@@ -767,9 +767,9 @@ version = "1.5.0"
 
 [[deps.StatsModels]]
 deps = ["DataAPI", "DataStructures", "LinearAlgebra", "Printf", "REPL", "ShiftedArrays", "SparseArrays", "StatsAPI", "StatsBase", "StatsFuns", "Tables"]
-git-tree-sha1 = "728d276a5adc2f1cbb800eec4b63d0a8221024b4"
+git-tree-sha1 = "85a43f6fc30dd80c61342519ca2fc36dac912eae"
 uuid = "3eaba693-59b7-5ba5-a881-562e759f1c8d"
-version = "0.7.5"
+version = "0.7.6"
 
 [[deps.StringManipulation]]
 deps = ["PrecompileTools"]
