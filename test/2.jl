@@ -128,7 +128,7 @@ function text(di, s1)
 
     end
 
-    Nucleus.Strin.text(s2_)
+    join(s2_, " . ")
 
 end
 
