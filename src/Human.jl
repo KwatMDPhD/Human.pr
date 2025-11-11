@@ -1,10 +1,8 @@
 module Human
 
-const PK = pkgdir(Human)
+const IN = pkgdir(Human, "in")
 
-const IN = joinpath(PK, "in")
-
-const OU = joinpath(PK, "ou")
+const OU = pkgdir(Human, "ou")
 
 # ----------------------------------------------------------------------------------------------- #
 

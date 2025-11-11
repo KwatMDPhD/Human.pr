@@ -6,11 +6,11 @@ using Human
 
 # ---- #
 
-const DI = joinpath(dirname(Human.PK), "Data.pr", "ou", "gene_set")
+const DI = pkgdir(Human, "..", "GeneSet.pr", "ou")
 
-const D1 = Nucleus.Dictionary.rea(joinpath(DI, "immune_population", "all.json"))
+const D1 = Nucleus.Dictionary.rea(joinpath(DI, "immune_population.json"))
 
-const D2 = Nucleus.Dictionary.rea(joinpath(DI, "neural_population", "all.json"))
+const D2 = Nucleus.Dictionary.rea(joinpath(DI, "neural_population.json"))
 
 #pop!(D1, "Progenitors")
 
